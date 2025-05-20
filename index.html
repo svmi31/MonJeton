@@ -3,298 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Plan d'Épargne Intelligent</title>
-
-  <!-- Polices -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <style>
-    :root {
-      --primary: #007bff;
-      --background: #ffffff;
-      --light: #f7faff;
-      --dark-bg: #1c1f26;
-      --dark-card: #2a2f3a;
-      --dark-text: #f5f5f5;
-      --font-main: 'Inter', sans-serif;
-      --font-title: 'Poppins', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-main);
-      background-color: var(--light);
-      color: #333;
-      padding: 0;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark-mode {
-      background-color: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 20px 15px;
-      font-family: var(--font-title);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      font-size: 22px;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .toggle-mode {
-      background: white;
-      color: var(--primary);
-      border: none;
-      padding: 8px 12px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    button.generate {
-      margin-top: 20px;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .plans, .historique {
-      margin-top: 40px;
-    }
-
-    .plan-card {
-      background: #ffffff;
-      border: 1px solid #d9e5f6;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
-      transition: background-color 0.3s;
-    }
-
-    .plan-card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      font-family: var(--font-title);
-      color: var(--primary);
-    }
-
-    .plan-card p {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .plan-card i {
-      margin-right: 8px;
-      color: var(--primary);
-    }
-
-    body.dark-mode .plan-card {
-      background-color: var(--dark-card);
-      border: 1px solid #3c4659;
-    }
-
-    .historique-item {
-      background: #e6f0ff;
-      padding: 15px;
-      border-left: 4px solid var(--primary);
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
-
-    body.dark-mode .historique-item {
-      background-color: #39414e;
-      color: var(--dark-text);
-    }
-
-    .historique-item small {
-      display: block;
-      margin-top: 5px;
-      color: gray;
-    }
-
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 18px;
-      }
-
-      .toggle-mode {
-        font-size: 14px;
-        padding: 6px 10px;
-      }
-    }
-  </style>
+  <title>Plan d'Épargne Étudiant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Plan d'Épargne</h1>
+    <button class="theme-switcher" onclick="toggleTheme()">🌓</button>
+  </header>
 
-<header>
-  <h1><i class="fas fa-piggy-bank"></i> Épargne Étudiant</h1>
-  <button class="toggle-mode" onclick="toggleDarkMode()">
-    <i class="fas fa-moon"></i> Thème
-  </button>
-</header>
+  <div class="container">
+    <h2>Définis ton objectif</h2>
+    <input type="text" id="objectifTitre" placeholder="Titre de l’objectif (ex : Nouveau téléphone)">
+    <textarea id="objectifDesc" placeholder="Description de ton objectif (facultatif)"></textarea>
+    <input type="number" id="montant" placeholder="Montant à épargner (ex: 3000)" />
+    <input type="number" id="jours" placeholder="Nombre de jours (ex: 30)" />
+    <button onclick="genererPlans()">Générer des plans</button>
 
-<main>
-  <label for="objectif"><i class="fas fa-bullseye"></i> Objectif (Fr CFA)</label>
-  <input type="number" id="objectif" placeholder="Ex: 3000" />
+    <div class="plans" id="plansContainer"></div>
 
-  <label for="jours"><i class="far fa-calendar-alt"></i> Durée (en jours)</label>
-  <input type="number" id="jours" placeholder="Ex: 30" />
-
-  <button class="generate" onclick="genererPlans()"><i class="fas fa-calculator"></i> Générer mes plans</button>
-
-  <div class="plans" id="resultats"></div>
-
-  <div class="historique">
-    <h3><i class="fas fa-history"></i> Historique des plans</h3>
-    <div id="historiqueList"></div>
+    <div class="progress-container" id="progressSection" style="display: none;">
+      <h2>Suivi de progression</h2>
+      <div id="daysList"></div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
   </div>
-</main>
 
-<script>
-  // Mode nuit
-  function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-  }
-
-  window.onload = () => {
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-    afficherHistorique();
-  }
-
-  function genererPlans() {
-    const montant = parseFloat(document.getElementById("objectif").value);
-    const jours = parseInt(document.getElementById("jours").value);
-    const resultats = document.getElementById("resultats");
-    resultats.innerHTML = "";
-
-    if (!montant || !jours || montant <= 0 || jours <= 0) {
-      resultats.innerHTML = "<p style='color:red;'>Veuillez entrer des valeurs valides.</p>";
-      return;
-    }
-
-    const plan1 = montant / jours;
-    const jours2 = Math.ceil(jours / 2);
-    const plan2 = montant / jours2;
-    const demiJours = Math.ceil(jours / 2);
-    const plan3 = montant / demiJours;
-    const sommeCroissante = (jours * (jours + 1)) / 2;
-    const premierJour = montant / sommeCroissante;
-
-    const plans = [
-      {
-        icon: "fas fa-coins",
-        title: "Plan quotidien",
-        text: `Épargne <strong>${plan1.toFixed(2)} Fr</strong> chaque jour pendant ${jours} jours.`
-      },
-      {
-        icon: "fas fa-clock",
-        title: "Un jour sur deux",
-        text: `Épargne <strong>${plan2.toFixed(2)} Fr</strong tous les 2 jours (${jours2} fois).`
-      },
-      {
-        icon: "fas fa-bolt",
-        title: "Plan rapide",
-        text: `Épargne <strong>${plan3.toFixed(2)} Fr</strong chaque jour sur ${demiJours} jours.`
-      },
-      {
-        icon: "fas fa-chart-line",
-        title: "Montant croissant",
-        text: `Commence à <strong>${premierJour.toFixed(2)} Fr</strong et augmente chaque jour pour atteindre ${montant} Fr en ${jours} jours.`
-      }
-    ];
-
-    plans.forEach(plan => {
-      resultats.innerHTML += `
-        <div class="plan-card">
-          <h3><i class="${plan.icon}"></i> ${plan.title}</h3>
-          <p>${plan.text}</p>
-        </div>
-      `;
-    });
-
-    sauvegarderHistorique(montant, jours);
-  }
-
-  function sauvegarderHistorique(montant, jours) {
-    const historique = JSON.parse(localStorage.getItem("historique")) || [];
-    const nouvelleEntree = {
-      montant,
-      jours,
-      date: new Date().toLocaleString("fr-FR")
-    };
-    historique.unshift(nouvelleEntree);
-    localStorage.setItem("historique", JSON.stringify(historique.slice(0, 5)));
-    afficherHistorique();
-  }
-
-  function afficherHistorique() {
-    const historique = JSON.parse(localStorage.getItem("historique")) || [];
-    const container = document.getElementById("historiqueList");
-    container.innerHTML = "";
-
-    if (historique.length === 0) {
-      container.innerHTML = "<p>Aucun historique enregistré.</p>";
-      return;
-    }
-
-    historique.forEach(item => {
-      container.innerHTML += `
-        <div class="historique-item">
-          <i class="fas fa-wallet"></i> Objectif de <strong>${item.montant} Fr</strong> sur <strong>${item.jours} jours</strong>
-          <small>Ajouté le ${item.date}</small>
-        </div>
-      `;
-    });
-  }
-</script>
-
+  <script src: script.js></script>
 </body>
 </html>
