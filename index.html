@@ -1,11 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Réseau Étudiant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #007BFF;
+      --secondary-color: #F5F9FF;
+      --text-color: #1a1a1a;
+      --font-inter: 'Inter', sans-serif;
+      --font-poppins: 'Poppins', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-inter);
+      color: var(--text-color);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-family: var(--font-poppins);
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      background-color: var(--secondary-color);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-family: var(--font-poppins);
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #002F6C;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .hero a {
+      text-decoration: none;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 60px 0;
+    }
+
+    .feature {
+      flex: 1 1 300px;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .feature h3 {
+      font-family: var(--font-poppins);
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    footer {
+      background-color: #002F6C;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>bonjour</h1>
+
+  <header>
+    <div class="container">
+      <nav>
+        <h1>Réseau Étudiant</h1>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Communautés</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Connexion</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Connecte-toi avec des étudiants comme toi</h2>
+      <p>Échange, collabore et construis ton avenir sur le premier réseau social dédié aux étudiants africains.</p>
+      <a href="#">Rejoins-nous maintenant</a>
+    </div>
+  </section>
+
+  <section class="features container">
+    <div class="feature">
+      <h3>Profils Étudiants</h3>
+      <p>Crée ton profil et partage ton parcours, tes projets et tes passions.</p>
+    </div>
+    <div class="feature">
+      <h3>Groupes & Clubs</h3>
+      <p>Rejoins des communautés par université, domaine d’étude ou intérêt commun.</p>
+    </div>
+    <div class="feature">
+      <h3>Événements</h3>
+      <p>Découvre ou organise des événements pour apprendre, networker et grandir ensemble.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Réseau Étudiant. Tous droits réservés.
+  </footer>
+
 </body>
 </html>
