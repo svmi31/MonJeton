@@ -16,6 +16,8 @@
       --primary: #007bff;
       --background: #ffffff;
       --light: #f0f8ff;
+      --dark-bg: #1c1f26;
+      --dark-text: #f5f5f5;
       --font-main: 'Inter', sans-serif;
       --font-title: 'Poppins', sans-serif;
     }
@@ -26,6 +28,12 @@
       background-color: var(--light);
       color: #333;
       padding: 0 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
     }
 
     header {
@@ -34,11 +42,23 @@
       padding: 20px 0;
       text-align: center;
       font-family: var(--font-title);
+      position: relative;
     }
 
     h1 {
       margin: 0;
       font-size: 26px;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
     }
 
     main {
@@ -48,6 +68,11 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: background-color 0.3s;
+    }
+
+    body.dark-mode main {
+      background-color: #2a2f3a;
     }
 
     label {
@@ -77,11 +102,11 @@
       font-weight: bold;
     }
 
-    .plans {
+    .plans, .historique {
       margin-top: 30px;
     }
 
-    .plan {
+    .plan, .historique-item {
       background-color: #e9f3ff;
       border-left: 4px solid var(--primary);
       padding: 15px;
@@ -89,9 +114,21 @@
       border-radius: 6px;
     }
 
+    body.dark-mode .plan,
+    body.dark-mode .historique-item {
+      background-color: #39414e;
+      color: var(--dark-text);
+    }
+
     .plan i {
       margin-right: 8px;
       color: var(--primary);
+    }
+
+    .historique-item small {
+      display: block;
+      margin-top: 5px;
+      color: gray;
     }
 
     @media (max-width: 500px) {
@@ -105,6 +142,9 @@
 
 <header>
   <h1><i class="fas fa-piggy-bank"></i> Plan d'Épargne Intelligent</h1>
+  <button class="toggle-mode" onclick="toggleDarkMode()" title="Changer le thème">
+    <i class="fas fa-moon"></i>
+  </button>
 </header>
 
 <main>
@@ -117,9 +157,29 @@
   <button onclick="genererPlans()"><i class="fas fa-calculator"></i> Générer mes plans</button>
 
   <div class="plans" id="resultats"></div>
+
+  <div class="historique">
+    <h3><i class="fas fa-history"></i> Historique des plans</h3>
+    <div id="historiqueList"></div>
+  </div>
 </main>
 
 <script>
+  // Mode nuit
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+  }
+
+  // Appliquer le thème sauvegardé
+  window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+    afficherHistorique();
+  }
+
+  // Génération des plans + enregistrement
   function genererPlans() {
     const montant = parseFloat(document.getElementById("objectif").value);
     const jours = parseInt(document.getElementById("jours").value);
@@ -145,6 +205,41 @@
       <div class="plan"><i class="fas fa-bolt"></i> <strong>Plan rapide :</strong> Épargne <strong>${plan3.toFixed(2)} Fr</strong par jour sur ${demiJours} jours.</div>
       <div class="plan"><i class="fas fa-chart-line"></i> <strong>Montant croissant :</strong> Commence par <strong>${premierJour.toFixed(2)} Fr</strong et augmente chaque jour pour atteindre ${montant} Fr en ${jours} jours.</div>
     `;
+
+    sauvegarderHistorique(montant, jours);
+  }
+
+  // Historique (localStorage)
+  function sauvegarderHistorique(montant, jours) {
+    const historique = JSON.parse(localStorage.getItem("historique")) || [];
+    const nouvelleEntree = {
+      montant,
+      jours,
+      date: new Date().toLocaleString("fr-FR")
+    };
+    historique.unshift(nouvelleEntree);
+    localStorage.setItem("historique", JSON.stringify(historique.slice(0, 5))); // garde les 5 dernières entrées
+    afficherHistorique();
+  }
+
+  function afficherHistorique() {
+    const historique = JSON.parse(localStorage.getItem("historique")) || [];
+    const container = document.getElementById("historiqueList");
+    container.innerHTML = "";
+
+    if (historique.length === 0) {
+      container.innerHTML = "<p>Aucun historique enregistré.</p>";
+      return;
+    }
+
+    historique.forEach(item => {
+      container.innerHTML += `
+        <div class="historique-item">
+          <i class="fas fa-wallet"></i> Objectif de <strong>${item.montant} Fr</strong> sur <strong>${item.jours} jours</strong>
+          <small>Ajouté le ${item.date}</small>
+        </div>
+      `;
+    });
   }
 </script>
 
