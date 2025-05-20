@@ -3,247 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Réseau Étudiant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Plan d'Épargne Intelligent</title>
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- Icônes Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
-      --primary-color: #007BFF;
-      --secondary-color: #F5F9FF;
-      --text-color: #1a1a1a;
-      --font-inter: 'Inter', sans-serif;
-      --font-poppins: 'Poppins', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --primary: #007bff;
+      --background: #ffffff;
+      --light: #f0f8ff;
+      --font-main: 'Inter', sans-serif;
+      --font-title: 'Poppins', sans-serif;
     }
 
     body {
-      font-family: var(--font-inter);
-      color: var(--text-color);
-      background-color: #ffffff;
-      line-height: 1.6;
+      margin: 0;
+      font-family: var(--font-main);
+      background-color: var(--light);
+      color: #333;
+      padding: 0 15px;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: var(--primary-color);
+      background-color: var(--primary);
       color: white;
-      z-index: 1000;
-      padding: 15px 0;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-
-    nav h1 {
-      font-family: var(--font-poppins);
-      font-size: 24px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .hero {
-      background-color: var(--secondary-color);
-      padding: 120px 0 80px; /* espace pour le header fixe */
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-family: var(--font-poppins);
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #002F6C;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #444;
-    }
-
-    .hero a {
-      text-decoration: none;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 60px 0;
-    }
-
-    .feature {
-      flex: 1 1 300px;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .feature i {
-      font-size: 40px;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    .feature h3 {
-      font-family: var(--font-poppins);
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: var(--primary-color);
-    }
-
-    .feature p {
-      font-size: 16px;
-      color: #666;
-    }
-
-    footer {
-      background-color: #002F6C;
-      color: white;
-      text-align: center;
       padding: 20px 0;
-      font-size: 14px;
+      text-align: center;
+      font-family: var(--font-title);
     }
 
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        color: white;
-      }
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
 
-      .nav-links {
-        position: fixed;
-        top: 0;
-        left: -250px;
-        height: 100%;
-        width: 250px;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: left 0.3s ease;
-        padding-top: 60px;
-        z-index: 999;
-      }
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--background);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
 
-      .nav-links.active {
-        left: 0;
-      }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
 
-      .nav-links li {
-        margin: 20px 0;
-      }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
 
-      .hero h2 {
-        font-size: 28px;
-      }
+    button {
+      margin-top: 20px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-      .features {
-        flex-direction: column;
-        align-items: center;
+    .plans {
+      margin-top: 30px;
+    }
+
+    .plan {
+      background-color: #e9f3ff;
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+
+    .plan i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+
+    @media (max-width: 500px) {
+      main {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <nav>
-        <h1><i class="fas fa-graduation-cap"></i> Réseau Étudiant</h1>
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
-          <li><a href="#"><i class="fas fa-users"></i> Communautés</a></li>
-          <li><a href="#"><i class="fas fa-calendar"></i> Événements</a></li>
-          <li><a href="#"><i class="fas fa-sign-in-alt"></i> Connexion</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <h1><i class="fas fa-piggy-bank"></i> Plan d'Épargne Intelligent</h1>
+</header>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Connecte-toi avec des étudiants comme toi</h2>
-      <p>Échange, collabore et construis ton avenir sur le premier réseau social dédié aux étudiants africains.</p>
-      <a href="#"><i class="fas fa-user-plus"></i> Rejoins-nous</a>
-    </div>
-  </section>
+<main>
+  <label for="objectif"><i class="fas fa-bullseye"></i> Objectif (Fr CFA)</label>
+  <input type="number" id="objectif" placeholder="Ex: 3000" />
 
-  <section class="features container">
-    <div class="feature">
-      <i class="fas fa-id-card"></i>
-      <h3>Profils Étudiants</h3>
-      <p>Crée ton profil et partage ton parcours, tes projets et tes passions.</p>
-    </div>
-    <div class="feature">
-      <i class="fas fa-layer-group"></i>
-      <h3>Groupes & Clubs</h3>
-      <p>Rejoins des communautés par université, domaine d’étude ou intérêt commun.</p>
-    </div>
-    <div class="feature">
-      <i class="fas fa-calendar-check"></i>
-      <h3>Événements</h3>
-      <p>Découvre ou organise des événements pour apprendre, networker et grandir ensemble.</p>
-    </div>
-  </section>
+  <label for="jours"><i class="far fa-calendar-alt"></i> Durée (en jours)</label>
+  <input type="number" id="jours" placeholder="Ex: 30" />
 
-  <footer>
-    &copy; 2025 Réseau Étudiant. Tous droits réservés.
-  </footer>
+  <button onclick="genererPlans()"><i class="fas fa-calculator"></i> Générer mes plans</button>
 
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+  <div class="plans" id="resultats"></div>
+</main>
 
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+<script>
+  function genererPlans() {
+    const montant = parseFloat(document.getElementById("objectif").value);
+    const jours = parseInt(document.getElementById("jours").value);
+    const resultats = document.getElementById("resultats");
+    resultats.innerHTML = "";
+
+    if (!montant || !jours || montant <= 0 || jours <= 0) {
+      resultats.innerHTML = "<p style='color:red;'><i class='fas fa-exclamation-triangle'></i> Veuillez entrer des valeurs valides.</p>";
+      return;
+    }
+
+    const plan1 = montant / jours;
+    const jours2 = Math.ceil(jours / 2);
+    const plan2 = montant / jours2;
+    const demiJours = Math.ceil(jours / 2);
+    const plan3 = montant / demiJours;
+    const sommeCroissante = (jours * (jours + 1)) / 2;
+    const premierJour = montant / sommeCroissante;
+
+    resultats.innerHTML += `
+      <div class="plan"><i class="fas fa-coins"></i> <strong>Plan quotidien :</strong> Épargne <strong>${plan1.toFixed(2)} Fr</strong> chaque jour pendant ${jours} jours.</div>
+      <div class="plan"><i class="fas fa-clock"></i> <strong>Un jour sur deux :</strong> Épargne <strong>${plan2.toFixed(2)} Fr</strong tous les 2 jours (${jours2} fois).</div>
+      <div class="plan"><i class="fas fa-bolt"></i> <strong>Plan rapide :</strong> Épargne <strong>${plan3.toFixed(2)} Fr</strong par jour sur ${demiJours} jours.</div>
+      <div class="plan"><i class="fas fa-chart-line"></i> <strong>Montant croissant :</strong> Commence par <strong>${premierJour.toFixed(2)} Fr</strong et augmente chaque jour pour atteindre ${montant} Fr en ${jours} jours.</div>
+    `;
+  }
+</script>
 
 </body>
 </html>
