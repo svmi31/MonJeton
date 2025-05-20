@@ -1,0 +1,113 @@
+ 
+    :root {
+      --bleu: #007BFF;
+      --blanc: #ffffff;
+      --noir: #121212;
+      --gris: #f1f1f1;
+      --dark-bg: #1a1a1a;
+      --dark-card: #2c2c2c;
+      --dark-text: #eaeaea;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: var(--blanc);
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    header {
+      background-color: var(--bleu);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    input, button, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 10px;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: var(--bleu);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 20px;
+    }
+
+    .plan-card {
+      background: var(--gris);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    body.dark .plan-card {
+      background: var(--dark-card);
+    }
+
+    .selected {
+      border: 2px solid var(--bleu);
+    }
+
+    .progress-container {
+      margin-top: 30px;
+    }
+
+    .day-check {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .day-check input {
+      margin-right: 10px;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background: #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--bleu);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .theme-switcher {
+      background: #fff;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+  
