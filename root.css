@@ -1,0 +1,39 @@
+:root {
+  /* Violet (Purple) */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7e22ce;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+
+  /* Bleu (Blue) */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+
+  /* Couleurs d'état */
+  --success: #10b981; /* Succès, confirmation */
+  --error: #ef4444;   /* Erreur, suppression */
+  --warning: #f59e0b; /* Avertissement, attention */
+  --info: #3b82f6;     /* Information, notification */
+
+  /* Dégradés pour les types d’événements */
+    --gradient: linear-gradient(to right, var(--purple-500), var(--blue-500));
+  --gradient-gala: linear-gradient(to right, var(--purple-300), var(--blue-300));
+  --gradient-competition: linear-gradient(to right, #10b981, #14b8a6);
+  --gradient-sortie: linear-gradient(to right, #f59e0b, #f97316);
+  --gradient-conference: linear-gradient(to right, var(--blue-500), #06b6d4);
+  --gradient-fete: linear-gradient(to right, #6366f1, #8b5cf6);
+}
