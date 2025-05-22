@@ -177,7 +177,7 @@
       align-items: center;
     }
     section h2 {
-      font-size: 1.5em;
+      font-size: 1.7em;
       color: var(--purple-900);
       margin-bottom: 20px;
     }
@@ -187,12 +187,50 @@
       justify-content: center;
       gap: 20px;
     }
+    section .events .card-events {
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
     section .card-events div {
       background: var(--gradient-gala);
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px;
-      width: 300px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      height: 160px;
+      padding: 10px;
     }
-    
+    section .card-events div p {
+      color: #fff;
+      font-size: 1.3em;
+      font-weight: 700;
+      font-family: inter;
+      padding-top: 110px;
+    } 
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+    }
+    ul li {
+      font-weight: 400;
+      font-family: inter;
+      font-size: 1em;
+      color: #0c0c0cb5;
+    }
+    ul li img {
+      width: 25px;
+      height: 25px;
+      position: relative;
+      top: 6px;
+    }
+    section .card-events p{
+      padding: 18px;
+      position: relative;
+      top: -10px;
+    }
+
+
+
  
