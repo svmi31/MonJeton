@@ -17,13 +17,14 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 10px 20px;
+      padding: 20px 20px;
       z-index: 1000;
     }
 
     .logo {
-      color: rgb(0, 0, 0);
+      color: var(--purple-700);
       font-size: 24px;
+      font-family: pacifico;
       font-weight: bold;
     }
 
@@ -45,7 +46,7 @@
     .nav-links #btn{
       background-color: var(--purple-600);
       color: #fff;
-      padding: 12px 60px;
+      padding: 12px 50px;
       font-size: 18px;
       border-radius: 5px;
     }
@@ -86,8 +87,8 @@
         width: 250px;
         height: 100%;
         background-color: #ffffff;
-        padding-top: 60px;
-        transition: right 0.3s ease;
+        padding-top: 90px;
+        transition: right 0.4s ease;
       }
 
       .nav-links.show {
@@ -100,10 +101,11 @@
 
       .close-btn {
         display: block;
+        font-size: 3em;
       }
 
       .nav-links li {
-        padding: 10px 20px;
+        padding: 20px 20px;
       }
     }
 
@@ -130,21 +132,23 @@
       text-align: center;
       max-width: 600px;
       line-height: 1.5em;
+      margin-bottom: 20px;
+
     }
     main .card {
       background: var(--gradient);
       border-radius: 10px;
       padding: 20px;
-      margin: 20px;
     }
     main .card .card-content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: start;
     }
     main .card .card-content h3 {
-      font-size: 1.4em;
+      font-size: 1.8em;
       font-family: inter;
       position: relative;
       right: 20px;
@@ -152,8 +156,9 @@
       margin-bottom: 15px;
     }
     main .card .card-content p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-family: inter;
+      font-weight: 400;
       color: #fff;
       line-height: 1.5em;
       margin-bottom: 20px;
@@ -165,7 +170,7 @@
       font-weight: 700;
       color: var(--purple-800);
       cursor: pointer;
-      padding: 10px 20px;
+      padding: 15px 30px;
       border-radius: 5px;
       font-size: 1em;
       text-decoration: none;
@@ -179,13 +184,13 @@
     section h2 {
       font-size: 1.7em;
       color: var(--purple-900);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     section .events {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
     section .events .card-events {
       border-radius: 10px;

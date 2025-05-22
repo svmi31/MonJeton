@@ -30,7 +30,7 @@
   --info: #3b82f6;     /* Information, notification */
 
   /* Dégradés pour les types d’événements */
-    --gradient: linear-gradient(to right, var(--purple-500), var(--blue-500));
+    --gradient: linear-gradient(to right, var(--purple-500), var(--blue-700));
   --gradient-gala: linear-gradient(to right, var(--purple-300), var(--blue-300));
   --gradient-competition: linear-gradient(to right, #10b981, #14b8a6);
   --gradient-sortie: linear-gradient(to right, #f59e0b, #f97316);
