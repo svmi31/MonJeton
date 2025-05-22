@@ -17,7 +17,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 20px 20px;
+      padding: 15px 20px;
       z-index: 1000;
     }
 
@@ -30,7 +30,7 @@
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      gap: 10px;
       list-style: none;
     }
 
@@ -79,16 +79,29 @@
     }
 
     @media screen and (max-width: 768px) {
+      nav {
+        background: var(--gradient);
+      }
+      .logo {
+        color: #fff;
+      }
+      .menu-toggle span{
+        background: #fff;
+        border-radius: 10px;
+      }
       .nav-links {
         flex-direction: column;
         position: fixed;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         top: 0;
         right: -250px;
         width: 250px;
         height: 100%;
         background-color: #ffffff;
         padding-top: 90px;
-        transition: right 0.4s ease;
+        transition: right 0.8s ease;
       }
 
       .nav-links.show {
