@@ -131,6 +131,7 @@
   border-radius: 8px;
   background-color: #fff;
   font-size: 14px;
+  color: black;
   font-family: 'Poppins', sans-serif;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -396,7 +397,7 @@
   }
 
   .close-popup {
-    font-size: 20px;
+    font-size: 30px;
     top: 5px;
     right: 10px;
   }
