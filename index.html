@@ -115,18 +115,43 @@
 <div id="popupForm" class="popup">
   <div class="popup-content">
     <span class="close-popup" onclick="closePopup()">&times;</span>
-    <h3>Inscription à l'événement</h3>
+    <h3>Inscription : Gala de Fin d'Année</h3>
+    <div class="event-details">
+      <span>
+        <p class="event-name">Gala de Fin d'Année</p>
+        <P class="event-date">25 Juin 2025 | 19h00</P>
+      </span>
+      <span>
+        <p class="event-prix">5000 FCFA</p>
+      </span>
+    </div>
     <form>
       <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" required>
-
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="classe">Classe :</label>
-      <input type="text" id="classe" name="classe" required>
-
-      <button type="submit">Valider</button>
+      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+      <label for="prenom">Prénom (s) :</label>
+      <input type="text" id="prenoms" name="prenoms"  placeholder="Votre prrenom" required>
+     <label for="classe">Classe :</label>
+     <select id="classe" name="classe" required>
+     <option value="" disabled selected>-- Sélectionnez votre classe --</option>
+     <option value="IDA 1">IDA 1</option>
+     <option value="Logistique 1">Logistique 1</option>
+     <option value="Marketing 1">Marketing 1</option>
+     <option value="ACG 1">ACG 1</option>
+     <option value="Logistique 2">Logistique 2</option>
+     <option value="IDA 2">IDA 2</option>
+     <option value="Marketing 2">Marketing 2</option>
+     <option value="ACG 2">ACG 2</option>
+     <option value="Licence 3 informatique">Licence 3 informatique</option>
+     <option value="Licence 3 Marketing">Licence 3 Marketing</option>
+     <option value="Licence 3 RH">Licence 3 RH</option>
+     <option value="Licence 3 audit">Licence 3 audit</option>
+     <option value="Autre">Autre</option>
+     </select>
+    <label>Numéro de téléphone :</label>
+    <input type="tel" id="telephone" name="telephone"  placeholder="Votre Numéro de téléphone" required>
+    <a href="#">
+        <button type="submit">Passer au Paiement</button>
+    </a>
     </form>
   </div>
 </div>

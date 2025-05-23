@@ -31,7 +31,8 @@
 
   /* Dégradés pour les types d’événements */
     --gradient: linear-gradient(to right, var(--purple-500), var(--blue-700));
-  --gradient-gala: linear-gradient(to right, var(--purple-300), var(--blue-300));
+      --gradient-gala: linear-gradient(to right, var(--purple-300), var(--blue-300));
+  --gradient-gala-2: linear-gradient(to right, var(--purple-100), var(--blue-100));
   --gradient-competition: linear-gradient(to right, #10b981, #14b8a6);
   --gradient-sortie: linear-gradient(to right, #f59e0b, #f97316);
   --gradient-conference: linear-gradient(to right, var(--blue-500), #06b6d4);
