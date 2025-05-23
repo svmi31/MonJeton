@@ -124,11 +124,31 @@
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+.popup-content select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+.popup-content select:focus {
+  outline: none;
+  border-color: #888;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
 .popup-content button {
   margin-top: 15px;
   padding: 10px;
-  background-color: #333;
+  background: var(--gradient);
   color: white;
   border: none;
   border-radius: 8px;
@@ -136,15 +156,11 @@
   transition: 0.2s;
 }
 
-.popup-content button:hover {
-  background-color: #555;
-}
-
 .close-popup {
   position: absolute;
   top: 10px;
   right: 15px;
-  font-size: 24px;
+  font-size: 30px;
   cursor: pointer;
 }
 
